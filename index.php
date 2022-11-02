@@ -1,5 +1,6 @@
 <?php
-
+include_once ('vendor/autoload.php');
+use alekseikovrigin\DependencyInjectionContainer;
 
 interface MyInterface{}
 class Foo implements MyInterface{}
@@ -12,7 +13,7 @@ class Baz
     }
 }
 
-$container = new Container();
+$container = new \DependencyInjectionContainer();
 $container->set('Baz', 'Baz');
 $container->set('MyInterface', 'Foo');
 $baz = $container->get('Baz');

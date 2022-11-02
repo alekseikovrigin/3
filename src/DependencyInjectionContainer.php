@@ -1,9 +1,10 @@
 <?php
 use alekseikovrigin\DependencyInjectionContainer\Base;
+use alekseikovrigin\DependencyInjectionContainer\Exceptions;
 
 class DependencyInjectionContainer implements Base\Container
 {
-    protected $setings = array();
+    protected $settings = array();
 
     public function set($abstract, $concrete = null)
     {
@@ -11,16 +12,16 @@ class DependencyInjectionContainer implements Base\Container
             $concrete = $abstract;
         }
 
-        $this->setings[$abstract] = $concrete;
+        $this->settings[$abstract] = $concrete;
     }
 
     public function get($abstract, $parameters = array())
     {
-        if (!isset($this->setings[$abstract])) {
+        if (!isset($this->settings[$abstract])) {
             return null;
         }
 
-        return $this->build($this->setings[$abstract], $parameters);
+        return $this->build($this->settings[$abstract], $parameters);
     }
 
     public function build($concrete, $parameters)
