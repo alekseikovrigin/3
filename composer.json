@@ -1,0 +1,14 @@
+{
+  "name": "alekseikovrigin/Dependency-Injection-Container",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Comp",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  }
+}
